@@ -80,8 +80,16 @@ def creategraph(LINKS):
 	for item in value:
 	    G.add_node(item)
 	    G.add_edge(key, item)
-    
+   
+    #check if graph image already exists, if so delete it and replace
+    if os.path.isfile("graph.png"):
+        os.remove("graph.png")
+	os.remove("graph.jpg")
+
+    #draw graph
     nx.draw_spring(G,arrows=False,with_labels=False,node_size=50,node_color='green',font_size=8)
+
+    #save graph to file, enlarge and convert to jpg
     plt.savefig("graph.png")
     os.system("convert graph.png -resize 130% graph.jpg")
 

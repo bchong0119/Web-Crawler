@@ -54,11 +54,11 @@ def crawl(numlinks, url):
 			site=requests.get(URL)
 
 			if site.status_code != 200:
-			    print URL, "website cannot be accessed!"
+			    #print URL, "website cannot be accessed!"
 			    #sys.exit()
 			    continue
 		    except ConnectionError:
-			print URL, "website cannot be accessed!"
+			#print URL, "website cannot be accessed!"
 			continue
 	    
 
@@ -70,20 +70,7 @@ def crawl(numlinks, url):
 			    LINKS[URL].add(line)
     return LINKS 
 
-def creategraph(LINKS):
-    #initialize a graph
-    G=nx.Graph()
-    
-    #iterate through LINKS to add nodes and edges 
-    for key, value in LINKS.items():
-	G.add_node(key)
-	for item in value:
-	    G.add_node(item)
-	    G.add_edge(key, item)
-    
-    nx.draw_spring(G,arrows=False,with_labels=False,node_size=50,node_color='green',font_size=8)
-    plt.savefig("graph.png")
-    os.system("convert graph.png -resize 130% graph.jpg")
+
 
 if __name__ == "__main__":
 
@@ -115,23 +102,13 @@ if __name__ == "__main__":
 	site=requests.get(URL)
 
 	if site.status_code != 200:
-	    print "website cannot be accessed!"
+	    #print "website cannot be accessed!"
 	    sys.exit()
 
     except ConnectionError:
-    	print URL, "website cannot be accessed!"
+    	#print URL, "website cannot be accessed!"
 	sys.exit()
 
-    #if it does exists, parse html results to find urls, add then to dict
-    #going through main website user gave
     #go to each website and find what links are in those
     LINKS=crawl(int(numlinks), URL)
 
-
-    for key, value in LINKS.items():
-	print ">>>"+key
-	for v in value:	
-	    print v
-
-    #create graph visualization 
-    creategraph(LINKS)

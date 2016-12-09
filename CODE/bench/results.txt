@@ -1,0 +1,49 @@
+-----facebook.com
+--depth of 1
+
+real	0m1.226s
+user	0m0.649s
+sys	0m0.145s
+--depth of 2
+
+real	0m8.554s
+user	0m2.371s
+sys	0m0.213s
+--depth of 3
+
+real	4m34.179s
+user	2m31.586s
+sys	0m0.786s
+-----google.com
+--depth of 1
+
+real	0m0.986s
+user	0m0.579s
+sys	0m0.140s
+--depth of 2
+
+real	0m10.138s
+user	0m1.046s
+sys	0m0.162s
+--depth of 3
+
+real	22m4.381s
+user	10m10.517s
+sys	0m1.806s
+
+-----nd.edu
+--depth of 1
+
+real	0m1.482s
+user	0m0.604s
+sys	0m0.149s
+--depth of 2
+
+real	1m20.537s
+user	0m5.152s
+sys	0m0.303s
+--depth of 3
+
+real	2m48.140s
+user	1m9.446s
+sys	0m0.511s

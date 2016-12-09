@@ -1,0 +1,46 @@
+<html>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-Xqcy5ttufkC3rBa8EdiAyA1VgOGrmel2Y+wxm4K3kI3fcjTWlDWrlnxyD6hOi3PF" crossorigin="anonymous">
+</head>
+
+<body>
+<h1> Graph of the links on {{ url }} </h1>
+<b>depth: {{ depth }}</b><br>
+
+<div>
+<img src="graph.jpg" width="500" height="500"/><br>
+</div>
+
+<div class="container">
+<div class="row"> 
+
+<div class="col-md-6">
+<h1> List of the links on {{ url }} </h1>
+
+<table class= "table table-striped table-bordered">
+<thead><th>Parent</th><th>Child</th></thead>
+<tbody>
+
+{% for link, children in links.items() %}
+        <tr><td>{{ link }}</td><td></td><tr>
+    {% for child in children %}
+        <tr><td></td><td>{{ child }}</td></tr>
+    {% end %}
+{% end %}
+
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+
+<div> 	
+    <form action="/">
+        <h2>Click below to return to home screen:</h2>
+	<input type="submit" value="Main"><br><br>
+    </form>
+</div> 
+
+</body>
+</html>

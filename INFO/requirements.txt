@@ -1,0 +1,3 @@
+#Requirements 
+
+To run this program, the imports needed are sys, os, requests, networkx, tornado, and matplotlib.pyplot. Networkx and matplotlib.pyplot are needed to produce the graph, tornado is needed to produce the web page, and requests is needed to follow the links. 
